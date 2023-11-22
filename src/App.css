@@ -1,42 +1,84 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: auto;
+  background-image: url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&q=80&w=1905&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.player > p {
+  font-size: calc(0.5rem + .5vmin);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.new-form {
+ padding: 15px;
+  margin: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  flex: 1 0 21%;
+  display: flex;
+  flex-direction: column;
+  /* max-width: 250px; */
+  text-align: left;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.player-detail-card, .player-card {
+  padding: 15px;
+  margin: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  flex: 1 0 21%;
+  display: grid;
+  max-width: 250px;
+  text-align: left;
 }
 
-.card {
-  padding: 2em;
+.player-detail-card > button, .player-card > button {
+  color: black;
+  font-weight: bold;
+  min-width: 150px;
 }
 
-.read-the-docs {
-  color: #888;
+.player-detail-card > button > a, .player-card > button > a {
+  all: unset;
+}
+
+.player-image {
+  height: 300px;
+  margin-block-end: .23em;
+  width: 220px;
+}
+.players-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.rmv-btn {
+  background-color: lightcoral;
+  margin-top: .23em;
+}
+
+.details-btn {
+  background-color: lightseagreen;
+}
+
+.back-btn {
+background-color: lightskyblue;
+}
+
+.add-btn {
+  margin-left: 10px;
+  background-color: aquamarine;
 }
