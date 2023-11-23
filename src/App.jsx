@@ -4,12 +4,13 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import PlayerDetails from './components/PlayerDetails';
 import NewPlayerForm from './components/NewPlayerForm';
+import NavBar from './components/NavBar';
 
 function App() {
   return (
     <>
-      <h1>The Puppy Bowl Project</h1>
       <BrowserRouter>
+        <NavBar />
         <Routes>
           <Route path='/' element={<AllPlayers />} />
           <Route path='/:playerId' element={<PlayerDetails />} />
