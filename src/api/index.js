@@ -41,4 +41,19 @@ const addPlayer = async (player) => {
         console.error('Oops, something went wrong with adding that player!', err);
     }
 };
-export { getAllPlayers, getPlayerById, addPlayer };
+
+const deletePlayer = async (playerId) => {
+    console.info(`deleting data for playerid: ${playerId}`)
+    try {
+        const response = await fetch(`${basePlayersUrl}/${playerId}`, {
+            method: 'DELETE'
+        });
+        const result = await response.json();
+        console.log(`Delete result for ${playerId}: ${result.success}`)
+    } catch (err) {
+        console.error(err);
+        return false;
+    }
+    return true;
+}
+export { getAllPlayers, getPlayerById, addPlayer, deletePlayer };

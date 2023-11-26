@@ -22,7 +22,7 @@ export default function SearchBar({ placeholder, navigating, setNavigating }) {
       <input
         type='text'
         placeholder={placeholder}
-        value={navigating ? '' : searchText}
+        value={(navigating ? '' : searchText) || ''}
         onChange={handleChange}
         className='search-text'
       />

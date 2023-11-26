@@ -9,6 +9,12 @@ export default function AllPlayers() {
   let [searchParams] = useSearchParams();
 
   let search = searchParams.get('search');
+
+  const onPlayerDeleted = (playerId) => {
+    console.info(`removing playerId: ${playerId} from collection`);
+    setPlayers((players) => players.filter((player) => player.id !== playerId));
+  };
+
   useEffect(() => {
     async function getPlayers() {
       const allPlayers = await getAllPlayers();
@@ -30,7 +36,13 @@ export default function AllPlayers() {
   return (
     <div className='players-container'>
       {players?.map((player) => {
-        return <SinglePlayer key={player.id} player={player} />;
+        return (
+          <SinglePlayer
+            key={player.id}
+            player={player}
+            onPlayerDeleted={onPlayerDeleted}
+          />
+        );
       })}
     </div>
   );
