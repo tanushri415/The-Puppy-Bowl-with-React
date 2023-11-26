@@ -9,6 +9,9 @@ export default function SinglePlayer({ player }) {
       <button className='details-btn'>
         <Link to={`/${player.id}`}>Details</Link>
       </button>
+      <button onClick={() => handleDelete()} className='rmv-btn'>
+        Delete
+      </button>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export default function SearchBar({ placeholder }) {
+export default function SearchBar({ placeholder, navigating, setNavigating }) {
   const navigate = useNavigate();
   const [searchText, setSearchText] = useState(placeholder);
 
@@ -11,6 +11,7 @@ export default function SearchBar({ placeholder }) {
     navigate(`/?search=${searchText}`);
   };
   const handleChange = (event) => {
+    setNavigating(false);
     const value = event.target.value;
     // console.log(`name: ${name}, value: ${value}`);
     setSearchText(value);
@@ -21,10 +22,13 @@ export default function SearchBar({ placeholder }) {
       <input
         type='text'
         placeholder={placeholder}
-        value={searchText || ''}
+        value={navigating ? '' : searchText}
         onChange={handleChange}
+        className='search-text'
       />
-      <button type='submit'>Search</button>
+      <button type='submit' className='search-btn'>
+        Search
+      </button>
     </form>
   );
 }

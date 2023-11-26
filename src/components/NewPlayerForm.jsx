@@ -29,7 +29,7 @@ export default function NewPlayerForm() {
     <div className='form-container'>
       <form className='new-form' onSubmit={handleSubmit}>
         <h2>New Puppy Form</h2>
-        <div>
+        <div className='new-form__div'>
           <label htmlFor='name'>Name</label>
           <input
             name='name'
@@ -38,7 +38,7 @@ export default function NewPlayerForm() {
             onChange={handleChange}
           />
         </div>
-        <div>
+        <div className='new-form__div'>
           <label htmlFor='breed'>Breed</label>
           <input
             name='breed'

@@ -6,7 +6,8 @@ import { useSearchParams } from 'react-router-dom';
 
 export default function AllPlayers() {
   const [players, setPlayers] = useState([]);
-  let [searchParams, setSearchParams] = useSearchParams();
+  let [searchParams] = useSearchParams();
+
   let search = searchParams.get('search');
   useEffect(() => {
     async function getPlayers() {
@@ -16,7 +17,7 @@ export default function AllPlayers() {
       if (search !== undefined && search !== null) {
         //filter records here
         const filteredPlayers = allPlayers.filter((player) =>
-          player.name.includes(search)
+          player.name.toUpperCase().includes(search.toUpperCase())
         );
         setPlayers(filteredPlayers);
       } else {

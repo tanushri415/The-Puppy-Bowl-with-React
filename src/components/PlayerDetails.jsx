@@ -4,7 +4,7 @@ import { getPlayerById } from '../api';
 import Player from './Player';
 import { Link, useParams } from 'react-router-dom';
 
-export default function PlayerDetails() {
+export default function PlayerDetails({ setNavigating }) {
   const [player, setPlayer] = useState(undefined);
   let { playerId } = useParams();
 
@@ -18,7 +18,7 @@ export default function PlayerDetails() {
   return (
     <div className='players-container'>
       <div className='player-detail-card'>
-        {player !== null ? <Player player={player} /> : <></>}
+        {player !== null ? <Player player={player} /> : <></>}     
         <button className='back-btn'>
           <Link to={`/`}>Back</Link>
         </button>
